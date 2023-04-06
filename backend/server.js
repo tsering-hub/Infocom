@@ -20,6 +20,7 @@ app.use(
 
 // routes
 app.use("/users", require("./routes/userRoutes"));
+app.use("/task", require("./routes/taskRoutes"));
 
 app.use(errorHandler);
 

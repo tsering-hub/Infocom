@@ -4,8 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Admin from "./pages/admin";
-import Staff from "./pages/staff";
+import Admin from "./pages/Admin";
+import Staff from "./pages/Staff";
 
 function App() {
   return (

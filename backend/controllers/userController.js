@@ -91,7 +91,7 @@ const loginUser = asyncHandler(async (req, res) => {
 const getStaffs = asyncHandler(async (req, res) => {
   const staffs = await User.find(
     {
-      userType: "Chef",
+      userType: "Staff",
     },
     { createdAt: 0, updatedAt: 0, userType: 0, password: 0, __v: 0 }
   );
