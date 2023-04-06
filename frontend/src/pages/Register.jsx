@@ -40,6 +40,7 @@ function Register() {
         console.log(res);
         if (res.status === 201) {
           toast.success("Register Successful");
+          window.location.replace("/login");
         } else {
           toast.error("Register Unsuccessful");
         }

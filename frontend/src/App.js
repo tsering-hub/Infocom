@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
 import Staff from "./pages/Staff";
+import PrivateRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -16,8 +17,22 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/staff" element={<Staff />} />
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/staff"
+              element={
+                <PrivateRoute>
+                  <Staff />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </div>
       </Router>

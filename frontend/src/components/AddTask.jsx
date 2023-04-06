@@ -40,6 +40,48 @@ const AddTask = () => {
     });
   }, []);
 
+  const addtask = () => {
+    // e.perventDefault();
+
+    if (title === "" || desc === "") {
+      toast.warn("Fill all Required Field", {
+        position: "top-center",
+        autoClose: 4000,
+      });
+      return;
+    }
+
+    const data = {
+      title: title,
+      desc: desc,
+      assignedto: assignedto,
+    };
+
+    axios
+      .post("/task/add", data, config)
+      .then((res) => {
+        if (res.status === 201) {
+          toast.success("Task Added Successfully", {
+            position: "top-center",
+            autoClose: 4000,
+          });
+          window.location.reload();
+        } else {
+          console.log("Please Try Again! Something Went Wrong!!!", res);
+          toast.error("Somthing went wrong!", {
+            toastId: "error",
+            position: "top-center",
+            autoClose: 4000,
+          });
+        }
+      })
+
+      .catch((e) => {
+        console.log(e);
+        toast.error(e.response.data.message);
+      });
+  };
+
   return (
     <div>
       <div className="form-title row justify-content-center mb-2 p-2">
@@ -98,6 +140,7 @@ const AddTask = () => {
             variant="contained"
             endIcon={<AddCircleIcon className="fs-3" />}
             data-test="add-btn"
+            onClick={addtask}
           >
             Add Task
           </Button>

@@ -30,6 +30,11 @@ function Login() {
         if (res.status === 200) {
           localStorage.setItem("userType", res.data.usertype);
           localStorage.setItem("token", res.data.token);
+          if (res.data.usertype === "Admin") {
+            window.location.replace("/admin");
+          } else {
+            window.location.replace("/staff");
+          }
           toast.success("Login Successful");
         } else {
           toast.error("Login Unsuccessful");

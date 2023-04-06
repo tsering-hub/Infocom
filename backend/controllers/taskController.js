@@ -168,13 +168,13 @@ const updateTask = asyncHandler(async (req, res) => {
     }
   );
 
-  if (food !== null) {
+  if (task !== null) {
     res.status(201).json({
-      msg: "Food Updated successfully",
+      msg: "Task Updated successfully",
     });
   } else {
     res.status(400);
-    throw new Error("Food not Updated");
+    throw new Error("Task not Updated");
   }
 });
 
