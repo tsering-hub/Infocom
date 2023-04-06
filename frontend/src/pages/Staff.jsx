@@ -106,7 +106,7 @@ const Staff = () => {
             <h3>To Do Task</h3>
             <MDBListGroup style={{ minWidth: "100%" }}>
               {pendingtasks.map((row) => (
-                <MDBListGroupItem className="d-flex flex-column justify-content-between align-items-center">
+                <MDBListGroupItem className="m-1 d-flex flex-column justify-content-between align-items-center">
                   <div
                     className="ms-2 me-auto"
                     style={{ minWidth: "100%", wordBreak: "break-all" }}
@@ -130,7 +130,7 @@ const Staff = () => {
             <h3>Doing</h3>
             <MDBListGroup style={{ minWidth: "100%" }}>
               {startedtasks.map((row) => (
-                <MDBListGroupItem className="d-flex flex-column justify-content-between align-items-center">
+                <MDBListGroupItem className="m-1 d-flex flex-column justify-content-between align-items-center">
                   <div
                     className="ms-2 me-auto"
                     style={{ minWidth: "100%", wordBreak: "break-all" }}
@@ -154,7 +154,7 @@ const Staff = () => {
             <h3>Completed</h3>
             <MDBListGroup style={{ minWidth: "100%" }}>
               {completedtasks.map((row) => (
-                <MDBListGroupItem className="d-flex justify-content-between align-items-center">
+                <MDBListGroupItem className="m-1 d-flex justify-content-between align-items-center">
                   <div
                     className="ms-2 me-auto"
                     style={{ minWidth: "100%", wordBreak: "break-all" }}
